@@ -1,12 +1,26 @@
 @import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 body {
-  background: #f1f1f1;
+  background: #ebd8ca;
 }
 
 .navbar {
-  background: #fff;
+  background: #ebd8ca;
   margin-bottom: 20px;
+  margin-top: 30px;
+  display: block;
+}
+
+.toptext {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  border: 1px dotted black;
+  font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  font-size: 12px;
 }
 
 .navbar img {
@@ -21,12 +35,12 @@ body {
 
 .search-bar .form-control {
   border-radius: 2px;
-  width: 80%
+  width: 80%;
 }
 .search-bar .btn {
   border-radius: 2px;
   border-color: #d3d3d3;
-  background: #f8f8f8;
+  background: #88c9e7;
   width: 20%;
   margin-left: -1px;
 }

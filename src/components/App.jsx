@@ -1,31 +1,37 @@
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import Search from './Search.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: '',
+      playing: '1w8Z0UOXVaY',
       videoList: []
+
     };
   }
 
   changeVideo(id) {
-    this.setState({
-      playing: id
-    });
-    console.log(id);
+    return (
+      () =>
+        this.setState({
+          playing: id
+        })
+    );
   }
 
-  // onClick = {
-  //   this.props.appState.changeVideo.bind(this, this.props.id)
-
   render() {
+
     return (
       <div>
         <nav className="navbar">
+          <div className="toptext">
+            <h1>Yo' Tub</h1>
+            <h2>it's not YouTube</h2>
+          </div>
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <div><Search /></div>
           </div>
         </nav>
         <div className="row">
