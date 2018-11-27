@@ -3,6 +3,7 @@ import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 import searchYouTube from '../lib/searchYouTube.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
+import exampleVideoData from '../data/exampleVideoData.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,12 +24,15 @@ class App extends React.Component {
         }
       },
 
-      videoList: []
+      videoList: exampleVideoData,
+
+      query: ''
 
     };
     this.changeVideo = this.changeVideo.bind(this);
     this.search = this.search.bind(this);
     this.successCB = this.successCB.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   search(query) {
@@ -58,6 +62,18 @@ class App extends React.Component {
     );
   }
 
+  handleClick(e) {
+    console.log(e.key);
+
+    if (e.key === 'Enter') {
+      this.search(this.state.query);
+    } else {
+      this.setState({
+        query: e.target.value + e.key
+      });
+    }
+  }
+
   // populateVideoList(video) {
   //   //console.log(this.state.videoList);
   //   return (
@@ -77,7 +93,7 @@ class App extends React.Component {
             <h2>it's not YouTube</h2>
           </div>
           <div className="col-md-6 offset-md-3">
-            <div><Search search={this.search} /></div>
+            <div><Search search={this.search} handleClick={this.handleClick} appState={this.state} /></div>
           </div>
         </nav>
         <div className="row">
