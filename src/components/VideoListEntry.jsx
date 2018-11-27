@@ -5,14 +5,15 @@ class VideoListEntry extends React.Component {
     super(props);
   }
 
-  playClicked() {
-    this.props.appState.playing = this.props.id;
-  }
+  // playClicked() {
+  //   this.props.appState.playing = this.props.id;
+  //   console.log(this.props);
+  // }
 
 
   render() {
     return (
-      <div className="video-list-entry media" onClick={this.playClicked.bind(this)}>
+      <div className="video-list-entry media" onClick={this.props.changeVideo(this.props.id)}>
         <div className="media-left media-middle">
           <img className="media-object" src={this.props.image} alt="" />
         </div>

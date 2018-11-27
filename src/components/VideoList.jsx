@@ -11,7 +11,7 @@ var VideoList = (props) => (
       let id = video.id.videoId;
 
       return (
-        <VideoListEntry title={title} description={description} image={image} appState={props.appState} id={id} key={id} />
+        <VideoListEntry title={title} description={description} image={image} appState={props.appState} id={id} changeVideo={props.changeVideo} key={id} />
       );
     })}
   </div>

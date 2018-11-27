@@ -8,8 +8,17 @@ class App extends React.Component {
       playing: '',
       videoList: []
     };
-
   }
+
+  changeVideo(id) {
+    this.setState({
+      playing: id
+    });
+    console.log(id);
+  }
+
+  // onClick = {
+  //   this.props.appState.changeVideo.bind(this, this.props.id)
 
   render() {
     return (
@@ -24,7 +33,7 @@ class App extends React.Component {
             <div><VideoPlayer appState={this.state} /></div>
           </div>
           <div className="col-md-5">
-            <div><VideoList appState={this.state} /></div>
+            <div><VideoList appState={this.state} changeVideo={this.changeVideo.bind(this)} /></div>
           </div>
         </div>
       </div>
