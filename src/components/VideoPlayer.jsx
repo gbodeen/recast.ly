@@ -3,15 +3,14 @@ class VideoPlayer extends React.Component {
     super(props);
   }
   render() {
-
     return (
       <div className="video-player">
         <div className="embed-responsive embed-responsive-16by9">
-          <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${this.props.appState.playing}?autoplay=1&mute=1&rel=0`} allowFullScreen></iframe>
+          <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${this.props.appState.playing.id.videoId}?autoplay=1&mute=1&rel=0`} allowFullScreen></iframe>
         </div>
         <div className="video-player-details">
-          <h3>Video Title</h3>
-          <div>Video Description</div>
+          <h3>{this.props.appState.playing.snippet.title}</h3>
+          <div>{this.props.appState.playing.snippet.description}</div>
         </div>
       </div>
     );

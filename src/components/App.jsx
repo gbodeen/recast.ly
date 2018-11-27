@@ -6,20 +6,42 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: '1w8Z0UOXVaY',
-      videoList: []
+      playing: {
+        id: {
+          videoId: '1w8Z0UOXVaY'
+        },
+        snippet: {
+          title: 'STAR WARS: A Bad Lip Reading',
+          description: 'Vader keeps texting Leia, while Ben continues his quest for the Pickaxe of Cortez. Jack Black, Maya Rudolph, and Bill Hader guest.',
+          thumbnails: {
+            default: {
+              url: 'https://i.ytimg.com/vi/1w8Z0UOXVaY/default.jpg'
+            }
+          }
+        }
+      },
+      //videoList: []
 
     };
   }
 
-  changeVideo(id) {
+  changeVideo(video) {
     return (
       () =>
         this.setState({
-          playing: id
+          playing: video
         })
     );
   }
+
+  // populateVideoList(video) {
+  //   //console.log(this.state.videoList);
+  //   return (
+  //     this.setState({
+  //       videoList: this.state.videoList.push(video)
+  //     })
+  //   );
+  // }
 
   render() {
 

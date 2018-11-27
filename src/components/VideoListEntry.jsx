@@ -3,6 +3,7 @@
 class VideoListEntry extends React.Component {
   constructor(props) {
     super(props);
+    //this.props.populateVideoList(this.props.video);
   }
 
   // playClicked() {
@@ -12,8 +13,9 @@ class VideoListEntry extends React.Component {
 
 
   render() {
+
     return (
-      <div className="video-list-entry media" onClick={this.props.changeVideo(this.props.id)}>
+      <div className="video-list-entry media" onClick={this.props.changeVideo(this.props.video)}>
         <div className="media-left media-middle">
           <img className="media-object" src={this.props.image} alt="" />
         </div>
